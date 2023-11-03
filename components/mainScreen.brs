@@ -1,7 +1,7 @@
 sub init()
 m.detalle=m.top.findNode("detalle")
 m.contenido=m.top.findNode("contenido")
-m.detalle.setFocus(true)   
+m.contenido.setFocus(true)   
 
 end sub
 
@@ -12,18 +12,18 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         ' Verificar las teclas presionadas
         if key = "right"
             ' Cambiar el enfoque y la opacidad al siguiente póster
-            if m.detalle.isInFocusChain()
-                m.detalle.setFocus(false)
-                m.contenido.setFocus(true)
+            if m.contenido.isInFocusChain()
+                m.contenido.setFocus(false)
+                m.detalle.setFocus(true)
           
                 handled = true
       
             end if
         else if key = "left"
             ' Cambiar el enfoque y la opacidad al póster anterior
-            if m.contenido.isInFocusChain()
-                m.contenido.setFocus(false)
-                m.detalle.setFocus(true)
+            if m.detalle.isInFocusChain()
+                m.detalle.setFocus(false)
+                m.contenido.setFocus(true)
           
                 handled = true
      
