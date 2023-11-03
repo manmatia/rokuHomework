@@ -5,13 +5,13 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-        <Label id="textoMarvel" text="textoooooo" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+        <Label id="textoMarvel" text="textoooooo" height="50" width="200" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
            
-        <Label id="textoMarvel" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,230]" 
+        <Label id="textoMarvel" text="texto bienvenida " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
             font="font:LargeBoldSystemFont"/>
 
-           <Rectangle id="botonMarvel1" focusable="true" translation="[80,380]" width="1800" height="650" opacity="1.0" color="0xFFFDD0">
+           <Rectangle id="botonMarvel1" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
             <Poster uri="pkg:/images/capitan.jpeg" width="240%" height="140%" translation="[20,26]"/>
              <Label id="textoMarvel" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFFFFFF" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
@@ -22,14 +22,14 @@
     text = "Ir al contenido"
     showFocusFootprint = "true"
     minWidth = "240"
-    translation="[200,30]"
+    translation="[200,930]"
      />
    <Button
     id = "detalle"
     text = "Ir al detalle"
     showFocusFootprint = "true"
     minWidth = "240"
-    translation="[200,330]"
+    translation="[1200,930]"
      />
     </children>
 </component>
