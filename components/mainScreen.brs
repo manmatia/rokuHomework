@@ -30,7 +30,10 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             end if
 
         else if key = "ok"
+      if m.contenido.setFocus(true)
+        
       
+    end if
         end if
     end if
     
