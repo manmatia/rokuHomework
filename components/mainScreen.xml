@@ -12,7 +12,7 @@
             font="font:LargeBoldSystemFont"/>
 
            <Rectangle id="botonMarvel1" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
-            <Poster uri="pkg:/images/capitan.jpeg" width="240%" height="140%" translation="[20,26]"/>
+            <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
              <Label id="textoMarvel" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFFFFFF" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
         </Rectangle>
@@ -22,7 +22,7 @@
     text = "Ir al contenido"
     showFocusFootprint = "true"
     minWidth = "240"
-    translation="[200,930]"
+    translation="[400,930]"
      />
    <Button
     id = "detalle"
