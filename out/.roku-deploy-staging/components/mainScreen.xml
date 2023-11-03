@@ -9,7 +9,7 @@
             font="font:LargeBoldSystemFont"/>
            
         <Label id="textoMarvel" text="texto bienvenida " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
-            font="font:LargeBoldSystemFont"/>
+            font="font:LargeBoldSystemFont" />
 
            <Rectangle id="botonMarvel1" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
             <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
