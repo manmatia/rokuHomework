@@ -5,15 +5,15 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-        <Label id="textoMarvel" text="textoooooo" height="50" width="200" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+        <Label id="texto" text="textoooooo" height="50" width="200" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
            
-        <Label id="textoMarvel" text="texto bienvenida " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
+        <Label id="textoBienvenida" text="texto bienvenida " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
             font="font:LargeBoldSystemFont" />
 
-           <Rectangle id="botonMarvel1" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
+           <Rectangle id="botonRectangle" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
             <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
-             <Label id="textoMarvel" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFFFFFF" translation="[200,30]" 
+             <Label id="texto2" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFFFFFF" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
         </Rectangle>
 
@@ -23,6 +23,7 @@
     showFocusFootprint = "true"
     minWidth = "240"
     translation="[400,930]"
+    onButtonPress="onButtonPress2"
      />
    <Button
     id = "detalle"
@@ -30,6 +31,7 @@
     showFocusFootprint = "true"
     minWidth = "240"
     translation="[1200,930]"
+     onButtonPress="onButtonPress"
      />
     </children>
 </component>

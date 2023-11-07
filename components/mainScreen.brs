@@ -41,3 +41,32 @@ sub init()
         
         return handled
     end function
+' CARITO
+    sub onButtonPress()
+        screen = CreateObject("roSGScreen")
+        scene = screen.GetActiveScene()
+    
+        if scene <> invalid
+            thirdScreen = screen.CreateScene("thirdScreen")
+            if thirdScreen <> invalid
+                scene.transition = "none" ' Puedes configurar el tipo de transición
+                scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
+                scene.replaceChild(thirdScreen)
+            end if
+        end if
+    end sub
+
+    ' matias
+    sub onButtonPress2()
+        screen = CreateObject("roSGScreen")
+        scene = screen.GetActiveScene()
+    
+        if scene <> invalid
+            videoScene = screen.CreateScene("videoScene")
+            if videoScene <> invalid
+                scene.transition = "none" ' Puedes configurar el tipo de transición
+                scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
+                scene.replaceChild(videoScene)
+            end if
+        end if
+    end sub
