@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name = "videoScene" extends = "Group">
+
+    <interface>
+        <field id="videoScene"  type="node" />
+    </interface> 
+    <script type="text/brightscript" uri="videoScene.brs" /> 
+
+<children >
+    <Video
+    id="videoPlayer"
+    translation="[0,150]"
+    width="2000%"
+    height="700%"
+    focusable="true"
+  
+    uri="pkg:/images/MARVEL.mp4"
+/>
+
+    <Label id="info" text="informacion del video" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+            font="font:LargeBoldSystemFont"/>
+
+                <Label id="duracion" text="duracion del video " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+            font="font:LargeBoldSystemFont"/>
+</children>
+</component>

@@ -5,15 +5,16 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-        <Label id="texto" text="textoooooo" height="50" width="200" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+    <!-- meter todo en layautgroup -->
+        <simpleLabel id="texto" text="Canal de marvel" height="50" width="500" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
            
-        <Label id="textoBienvenida" text="texto bienvenida " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
+        <simpleLabel id="textoBienvenida" text="Bienvenido al canal de marvel " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
             font="font:LargeBoldSystemFont" />
 
            <Rectangle id="botonRectangle" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
             <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
-             <Label id="texto2" text="texto bienvenida " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFFFFFF" translation="[200,30]" 
+             <Label id="texto2" text="este canal esta dedicado a los personajes de marvel,si sos fanatico te va a encantar nuestro canal "  horizAlign="center" height="400" width="400" vertAlign="center" color="0xFF0000" translation="[200,30]"  wordWrap="true"
             font="font:LargeBoldSystemFont"/>
         </Rectangle>
 

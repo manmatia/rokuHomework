@@ -15,7 +15,7 @@
     height="700%"
     focusable="true"
   
-    url="pkg:/images/MARVEL.mp4"
+    uri="pkg:/images/MARVEL.mp4"
 />
 
     <Label id="info" text="informacion del video" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
