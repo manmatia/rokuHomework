@@ -5,54 +5,24 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-<Group id="enterScreen" visible="true" >
-    <!-- meter todo en layautgroup -->
-        <simpleLabel id="texto" text="Canal de marvel" height="50" width="500" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
-            font="font:LargeBoldSystemFont"/>
-           
-        <simpleLabel id="textoBienvenida" text="Bienvenido al canal de marvel " height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" 
-            font="font:LargeBoldSystemFont" />
+        <Group id="enterScreen" visible="true" >
+            <!-- Meter todo en layoutGroup -->
+            <simpleLabel id="texto" text="Canal de marvel" height="50" width="500" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" font="font:LargeBoldSystemFont"/>
+            <simpleLabel id="textoBienvenida" text="Bienvenido al canal de marvel" height="50" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,130]" font="font:LargeBoldSystemFont" />
 
-           <Rectangle id="botonRectangle" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
-            <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
-           <Label id="texto2" text="Este canal esta dedicado a los personajes de marvel, si sos fanático te va a encantar nuestro canal"  color="0xFF0000" translation="[200,30]" wordWrap="true" font="font:LargeBoldSystemFont" width="1400" height="1250"/>
+            <Rectangle id="botonRectangle" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
+                <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
+                <Label id="texto2" text="Este canal está dedicado a los personajes de marvel, si eres fanático te va a encantar nuestro canal" color="0xFF0000" translation="[200,30]" wordWrap="true" font="font:LargeBoldSystemFont" width="1400" height="1250"/>
+            </Rectangle>
 
-        </Rectangle>
-
-   <Button
-    id = "contenido"
-    text = "Ir al contenido"
-    showFocusFootprint = "true"
-    minWidth = "240"
-    translation="[400,930]"
-    onButtonPress="onButtonPress2"
-     />
-   <Button
-    id = "detalle"
-    text = "Ir al detalle"
-    showFocusFootprint = "true"
-    minWidth = "240"
-    translation="[1200,930]"
-     onButtonPress="onButtonPress"
-     />
-     <Group/>
-
-       <Group id="videoScene"> 
-        <Video
-    id="videoPlayer"
-    translation="[0,150]"
-    width="2000%"
-    height="700%"
-    focusable="true"
-  
-    uri="pkg:/images/MARVEL.mp4"
-/>
-
-    <Label id="info" text="informacion del video" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
-            font="font:LargeBoldSystemFont"/>
-
-                <Label id="duracion" text="duracion del video " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
-            font="font:LargeBoldSystemFont"/>
-        <Group/>
+            <Button id="contenido" text="Ir al contenido" showFocusFootprint="true" minWidth="240" translation="[400,930]"  />
+            <Button id="detalle" text="Ir al detalle" showFocusFootprint="true" minWidth="240" translation="[1200,930]"  />
+        </Group>
+        
+        <Group id="videoScene"> 
+            <Video id="videoPlayer" translation="[0,150]" width="2000%" height="700%" focusable="true" uri="pkg:/images/MARVEL.mp4"/>
+            <Label id="info" text="información del video" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" font="font:LargeBoldSystemFont"/>
+            <Label id="duracion" text="duración del video" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" font="font:LargeBoldSystemFont"/>
+        </Group>
     </children>
 </component>

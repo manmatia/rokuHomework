@@ -34,7 +34,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             if m.detalle.hasFocus()
               m.videoScene.visible=true
                 handled = true
-                onButtonPress2()
+               
             end if
         end if
     end if
@@ -42,32 +42,32 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     return handled
 end function
 
-' CARITO
-sub onButtonPress()
-    screen = CreateObject("roSGScreen")
-    scene = screen.GetActiveScene()
+' ' CARITO
+' sub onButtonPress()
+'     screen = CreateObject("roSGScreen")
+'     scene = screen.GetActiveScene()
 
-    if scene <> invalid
-        thirdScreen = screen.CreateScene("thirdScreen")
-        if thirdScreen <> invalid
-            scene.transition = "none" ' Puedes configurar el tipo de transición
-            scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
-            scene.replaceChild(thirdScreen)
-        end if
-    end if
-end sub
+'     if scene <> invalid
+'         thirdScreen = screen.CreateScene("thirdScreen")
+'         if thirdScreen <> invalid
+'             scene.transition = "none" ' Puedes configurar el tipo de transición
+'             scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
+'             scene.replaceChild(thirdScreen)
+'         end if
+'     end if
+' end sub
 
-' matias
-sub onButtonPress2()
-    screen = CreateObject("roSGScreen")
-    scene = screen.GetActiveScene()
+' ' matias
+' sub onButtonPress2()
+'     screen = CreateObject("roSGScreen")
+'     scene = screen.GetActiveScene()
 
-    if scene <> invalid
-        videoScene = screen.CreateScene("videoScene")
-        if videoScene <> invalid
-            scene.transition = "none" ' Puedes configurar el tipo de transición
-            scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
-            scene.replaceChild(videoScene)
-        end if
-    end if
-end sub
+'     if scene <> invalid
+'         videoScene = screen.CreateScene("videoScene")
+'         if videoScene <> invalid
+'             scene.transition = "none" ' Puedes configurar el tipo de transición
+'             scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
+'             scene.replaceChild(videoScene)
+'         end if
+'     end if
+' end sub
