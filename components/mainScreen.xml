@@ -14,7 +14,7 @@
 
            <Rectangle id="botonRectangle" focusable="true" translation="[80,200]" width="1800" height="700" opacity="1.0" color="0xFFFDD0">
             <Poster uri="pkg:/images/capitan.jpeg" width="640" height="440" translation="[500,126]"/>
-           <Label id="texto2" text="este canal esta dedicado a los personajes de marvel, si sos fanático te va a encantar nuestro canal" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" wordWrap="true" font="font:LargeBoldSystemFont" width="1400" heigth="250"/>
+           <Label id="texto2" text="Este canal esta dedicado a los personajes de marvel, si sos fanático te va a encantar nuestro canal"  color="0xFF0000" translation="[200,30]" wordWrap="true" font="font:LargeBoldSystemFont" width="1400" height="1250" heigth="1000"/>
 
         </Rectangle>
 
