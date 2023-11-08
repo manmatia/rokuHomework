@@ -16,3 +16,6 @@ splash_min_time=2500
 
 # Resolution
 ui_resolutions=fhd
+
+sdk_instant_resume=1
+run_as_process=1

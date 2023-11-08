@@ -2,8 +2,12 @@ sub init()
     m.detalle = m.top.findNode("detalle")
     m.contenido = m.top.findNode("contenido")
     m.contenido.setFocus(true)
-    m.video = CreateObject("roSGNode", "videoScene")
+   
     m.videoScene = m.top.findNode("videoScene")
+    m.enterScreen = m.top.findNode("enterScreen")
+
+    m.videoScene.visible=false
+
     
 end sub
 
@@ -28,8 +32,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             end if
         else if key = "ok"
             if m.detalle.hasFocus()
-                screen = CreateObject("roSGScreen")
-                screen.SetScene("videoScene")
+              m.videoScene.visible=true
                 handled = true
                 onButtonPress2()
             end if
