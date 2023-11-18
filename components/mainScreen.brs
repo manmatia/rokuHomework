@@ -6,9 +6,7 @@ sub init()
     m.videoScene = m.top.findNode("videoScene")
     m.enterScreen = m.top.findNode("enterScreen")
 
-    m.videoScene.visible=false
-
-    
+    m.videoScene.visible = false
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
@@ -16,58 +14,22 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     
     if press then
         ' Verificar las teclas presionadas
-        if key = "right"
+        if key = "right" and m.contenido.isInFocusChain()
             ' Cambiar el enfoque 
-            if m.contenido.isInFocusChain()
-                m.contenido.setFocus(false)
-                m.detalle.setFocus(true)
-                handled = true
-            end if
-        else if key = "left"
+            m.contenido.setFocus(false)
+            m.detalle.setFocus(true)
+            handled = true
+        else if key = "left" and m.detalle.isInFocusChain()
             ' Cambiar el enfoque 
-            if m.detalle.isInFocusChain()
-                m.detalle.setFocus(false)
-                m.contenido.setFocus(true)
-                handled = true
-            end if
-        else if key = "ok"
-            if m.detalle.hasFocus()
-              m.videoScene.visible=true
-                handled = true
-               
-            end if
+            m.detalle.setFocus(false)
+            m.contenido.setFocus(true)
+            handled = true
+        else if key = "ok" and m.detalle.hasFocus()
+            ' Mostrar la pantalla del video
+            m.videoScene.visible = true
+            handled = true
         end if
     end if
     
     return handled
 end function
-
-' ' CARITO
-' sub onButtonPress()
-'     screen = CreateObject("roSGScreen")
-'     scene = screen.GetActiveScene()
-
-'     if scene <> invalid
-'         thirdScreen = screen.CreateScene("thirdScreen")
-'         if thirdScreen <> invalid
-'             scene.transition = "none" ' Puedes configurar el tipo de transición
-'             scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
-'             scene.replaceChild(thirdScreen)
-'         end if
-'     end if
-' end sub
-
-' ' matias
-' sub onButtonPress2()
-'     screen = CreateObject("roSGScreen")
-'     scene = screen.GetActiveScene()
-
-'     if scene <> invalid
-'         videoScene = screen.CreateScene("videoScene")
-'         if videoScene <> invalid
-'             scene.transition = "none" ' Puedes configurar el tipo de transición
-'             scene.presentation = "modal" ' Puedes configurar la modalidad de la presentación
-'             scene.replaceChild(videoScene)
-'         end if
-'     end if
-' end sub
