@@ -1,12 +1,7 @@
 sub init()
-    m.detalle = m.top.findNode("detalle")
-    m.contenido = m.top.findNode("contenido")
-    m.contenido.setFocus(true)
-   
-    m.videoScene = m.top.findNode("videoScene")
-    m.enterScreen = m.top.findNode("enterScreen")
+m.firstScreen=m.top.findNode("firstScreen")
+m.descriptText=m.top.findNode("descriptText")
 
-    m.videoScene.visible = false
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean

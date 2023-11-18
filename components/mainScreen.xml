@@ -22,7 +22,7 @@
                 text="Bienvenido al canal de marvel" />
         </layoutGroup>
 
-        <layaotGroup 
+        <layoutGroup 
             id="descriptText" 
             visible="true"
             color="0xFF0000" 
@@ -50,11 +50,11 @@
                             translation="[500,126]"/>
                 
                 </Rectangle>
-        </layoutGroup>
+        </layoutGroup >
       
        
         
-        <Group 
+        <!-- <Group 
             id="videoScene"
             visible="false"> 
             <Video 
@@ -78,7 +78,7 @@
                 color="0xFF0000" 
                 translation="[200,30]" 
                 font="font:LargeBoldSystemFont"/>
-        </Group>
+        </Group> -->
 
         <Button 
             id="contenido" 
