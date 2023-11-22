@@ -7,6 +7,7 @@
     <children>
         <layoutGroup 
           id="firstScreen" 
+          layoutDirection="vert"
           visible="true"
           translation="[200,30]" 
           height="50" 
@@ -25,6 +26,7 @@
         <layoutGroup 
             id="descriptText" 
             visible="true"
+            layoutDirection="vert"
             color="0xFF0000" 
             translation="[200,30]" 
             Wrap="true" 
@@ -36,7 +38,7 @@
                     text="Este canal está dedicado a los personajes de marvel, si eres fanático te va a encantar nuestro canal" 
                     />
                 
-                <Rectangle 
+              <Rectangle 
                     id="botonRectangle" 
                     focusable="true" 
                     translation="[80,200]" 
@@ -50,19 +52,18 @@
                             translation="[500,126]"/>
                 
                 </Rectangle>
-        </layoutGroup >
-      
-       
-        
-        <Group 
+    </layoutGroup >
+  
+  <layoutGroup
             id="videoScene"
-            visible="false"> 
-            <!-- <Video 
+            visible="false"
+            layoutDirection="vert"> 
+            <Video 
                 translation="[0,150]" 
                 width="2000%" 
                 height="700%" 
                 focusable="true" 
-                uri="pkg:/images/MARVEL.mp4"/> -->
+                uri="pkg:/images/MARVEL.mp4"/>
             <Label 
                 id="info" 
                 text="información del video" 
@@ -78,7 +79,21 @@
                 color="0xFF0000" 
                 translation="[200,30]" 
                 font="font:LargeBoldSystemFont"/>
-        </Group>
+
+                 <Button 
+            id="home" 
+            text="volver a home" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[400,930]"  />
+       
+        </layoutGroup>
+
+    
+      
+       
+        
+      
 
         <Button 
             id="contenido" 
