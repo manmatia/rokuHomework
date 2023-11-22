@@ -59,6 +59,7 @@
             visible="false"
             layoutDirection="vert"> 
             <Video 
+                id="videoPlayer"
                 translation="[0,150]" 
                 width="2000%" 
                 height="700%" 

@@ -57,11 +57,11 @@ function setVideo()
     videoContent.title = "Marvel"
     videoContent.streamformat = "mp4"
     
-      
-        m.videoScene.content = videoContent
-        m.videoScene.control = "play"
-        m.videoScene.focusable=true
-        print m.videoScene.content
+        m.video = m.top.findNode("videoPlayer")
+        m.video.content = videoContent
+        m.video.control = "play"
+        m.video.focusable=true
+        print m.video.content
   
 end function
 
