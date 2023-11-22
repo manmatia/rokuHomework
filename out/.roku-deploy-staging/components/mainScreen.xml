@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MainScreen" extends="Scene">
+
+    <script type="text/brightscript" uri="mainScreen.brs" />
+
+    <children>
+        <layoutGroup 
+          id="firstScreen" 
+          layoutDirection="vert"
+          visible="true"
+          translation="[200,30]" 
+          height="50" 
+          width="200"
+          color="0xFF0000" 
+          font="font:LargeBoldSystemFont"  >
+        
+            <simpleLabel 
+                id="tittle" 
+                text="Canal de marvel" />
+            <simpleLabel 
+                id="welcomeText" 
+                text="Bienvenido al canal de marvel" />
+        </layoutGroup>
+
+        <layoutGroup 
+            id="descriptText" 
+            visible="true"
+            layoutDirection="vert"
+            color="0xFF0000" 
+            translation="[200,30]" 
+            Wrap="true" 
+            font="font:LargeBoldSystemFont" 
+            width="1400" 
+            height="1250" >
+                <Label 
+                    id="texto2" 
+                    text="Este canal está dedicado a los personajes de marvel, si eres fanático te va a encantar nuestro canal" 
+                    />
+                
+              <Rectangle 
+                    id="botonRectangle" 
+                    focusable="true" 
+                    translation="[80,200]" 
+                    width="1800" 
+                    height="700" 
+                    color="0xFFFDD0">
+                        <Poster 
+                            uri="pkg:/images/capitan.jpeg" 
+                            width="640" 
+                            height="440" 
+                            translation="[500,126]"/>
+                
+                </Rectangle>
+    </layoutGroup >
+  
+  <layoutGroup
+            id="videoScene"
+            visible="false"
+            layoutDirection="vert"> 
+            <Video 
+                translation="[0,150]" 
+                width="2000%" 
+                height="700%" 
+                focusable="true" 
+                uri="pkg:/images/MARVEL.mp4"/>
+            <Label 
+                id="info" 
+                text="información del video" 
+                height="100" 
+                width="400" 
+                horizAlign="center" 
+                vertAlign="center" 
+                color="0xFF0000" 
+                translation="[200,30]" />
+            <Label 
+                id="duracion" 
+                text="duración del video" 
+                color="0xFF0000" 
+                translation="[200,30]" 
+                font="font:LargeBoldSystemFont"/>
+
+                 <Button 
+            id="home" 
+            text="volver a home" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[400,930]"  />
+       
+        </layoutGroup>
+
+      <layoutGroup
+            id="detalleScreen"
+            visible="false"
+            layoutDirection="vert"> 
+           
+            <Label 
+                id="info" 
+                text="información del video" 
+                height="100" 
+                width="400" 
+                horizAlign="center" 
+                vertAlign="center" 
+                color="0xFF0000" 
+                translation="[200,30]" />
+            <Label 
+                id="duracion" 
+                text="duración del video" 
+                color="0xFF0000" 
+                translation="[200,30]" 
+                font="font:LargeBoldSystemFont"/>
+
+                 <Button 
+            id="home2" 
+            text="volver a home" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[400,930]"  />
+       
+        </layoutGroup>
+      
+       
+        
+      
+
+        <Button 
+            id="contenido" 
+            text="Ir al contenido" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[400,930]"  />
+        <Button 
+            id="detalle" 
+            text="Ir al detalle" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[1200,930]"  />
+    </children>
+</component>

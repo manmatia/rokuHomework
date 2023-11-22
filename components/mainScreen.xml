@@ -89,7 +89,35 @@
        
         </layoutGroup>
 
-    
+      <layoutGroup
+            id="detalleScreen"
+            visible="false"
+            layoutDirection="vert"> 
+           
+            <Label 
+                id="info" 
+                text="información del video" 
+                height="100" 
+                width="400" 
+                horizAlign="center" 
+                vertAlign="center" 
+                color="0xFF0000" 
+                translation="[200,30]" />
+            <Label 
+                id="duracion" 
+                text="duración del video" 
+                color="0xFF0000" 
+                translation="[200,30]" 
+                font="font:LargeBoldSystemFont"/>
+
+                 <Button 
+            id="home2" 
+            text="volver a home" 
+            showFocusFootprint="true" 
+            minWidth="240" 
+            translation="[400,930]"  />
+       
+        </layoutGroup>
       
        
         

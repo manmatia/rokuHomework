@@ -5,9 +5,13 @@ m.contenido=m.top.findNode("contenido")
 m.detalle=m.top.findNode("detalle")
 m.videoScene=m.top.findNode("videoScene")
 m.contenido.setFocus(true)
+m.detalleScreen=m.top.findNode("detalleScreen")
 m.home=m.top.findNode("home")
+m.home2=m.top.findNode("home2")
 m.contenido.observefield("buttonselected" , "showSecondScreen")
+m.detalle.observefield("buttonselected" , "showDetalleScreen")
 m.home.observefield("buttonselected" , "showGoHome")
+m.home2.observefield("buttonselected" , "showGoHome2")
 end sub
 
 
@@ -69,5 +73,27 @@ sub showGoHome(event as object)
         m.videoScene.visible = false
         m.contenido.setFocus(true)
     
+    end if
+end sub
+
+sub showGoHome2(event as object)
+    data= event.getData()
+    if data= invalid
+        m.firstScreen.visible= true
+        m.descriptText.visible=true
+        m.detalleScreen.visible = false
+        m.contenido.setFocus(true)
+    
+    end if
+end sub
+
+sub showDetalleScreen(event as object)
+    data= event.getData()
+    if data= invalid
+        m.firstScreen.visible= false
+        m.descriptText.visible=false
+        m.detalleScreen.visible = true
+        m.home2.setFocus(true)
+       
     end if
 end sub
