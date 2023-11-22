@@ -54,15 +54,15 @@
       
        
         
-        <!-- <Group 
+        <Group 
             id="videoScene"
             visible="false"> 
-            <Video 
+            <!-- <Video 
                 translation="[0,150]" 
                 width="2000%" 
                 height="700%" 
                 focusable="true" 
-                uri="pkg:/images/MARVEL.mp4"/>
+                uri="pkg:/images/MARVEL.mp4"/> -->
             <Label 
                 id="info" 
                 text="información del video" 
@@ -78,7 +78,7 @@
                 color="0xFF0000" 
                 translation="[200,30]" 
                 font="font:LargeBoldSystemFont"/>
-        </Group> -->
+        </Group>
 
         <Button 
             id="contenido" 
