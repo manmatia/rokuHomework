@@ -43,7 +43,7 @@ end function
 sub showSecondScreen(event as object)
     data = event.getData()
     if data = invalid
-        m.sideBar.visible = false
+        m.sideBar.visible = true
         m.firstScreen.visible = false
         m.descriptText.visible = false
         m.videoScene.visible = true
@@ -94,7 +94,7 @@ end sub
 sub showDetalleScreen(event as object)
     data = event.getData()
     if data = invalid
-        m.sideBar.visible = false
+        m.sideBar.visible = true
         m.firstScreen.visible = false
         m.descriptText.visible = false
         m.detalleScreen.visible = true
