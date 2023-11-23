@@ -2,16 +2,14 @@ sub init()
     m.sideBar = m.top.findNode("sideBar")
     m.firstScreen = m.top.findNode("firstScreen")
     m.descriptText = m.top.findNode("descriptText")
-    m.contenido = m.top.findNode("contenido")
-    m.detalle = m.top.findNode("detalle")
+
     m.videoScene = m.top.findNode("videoScene")
-    m.contenido.setFocus(true)
+
     m.detalleScreen = m.top.findNode("detalleScreen")
   
     m.home2 = m.top.findNode("home2")
-    m.contenido.observefield("buttonselected", "showSecondScreen")
-    m.detalle.observefield("buttonselected", "showDetalleScreen")
-    ' m.home.observefield("buttonselected", "showGoHome")
+
+
     m.home2.observefield("buttonselected", "showGoHome2")
 
     ' botones navbar
