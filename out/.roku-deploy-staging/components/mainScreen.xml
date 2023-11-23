@@ -218,12 +218,12 @@
                 translation="[200,30]" 
                 font="font:LargeBoldSystemFont"/>
 
-                 <Button 
+                 <!-- <Button 
             id="home" 
             text="volver a home" 
             showFocusFootprint="true" 
             minWidth="240" 
-            translation="[400,930]"  />
+            translation="[400,930]"  /> -->
        
         </layoutGroup>
 
@@ -235,25 +235,25 @@
             <Label 
                 id="info" 
                 text="información del video" 
-                height="100" 
-                width="400" 
+                height="400" 
+                width="800" 
                 horizAlign="center" 
                 vertAlign="center" 
                 color="0xFF0000" 
-                translation="[200,30]" />
+                translation="[400,130]" />
             <Label 
                 id="duracion" 
                 text="duración del video" 
                 color="0xFF0000" 
-                translation="[200,30]" 
+                translation="[600,330]" 
                 font="font:LargeBoldSystemFont"/>
 
-                 <Button 
+                 <!-- <Button 
             id="home2" 
             text="volver a home" 
             showFocusFootprint="true" 
             minWidth="240" 
-            translation="[400,930]"  />
+            translation="[400,930]"  /> -->
        
         </layoutGroup>
       
