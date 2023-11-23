@@ -218,54 +218,82 @@ function onKeyEvent(key as string, press as boolean) as boolean
         else if key= "OK" and m.advengers.hasFocus()
             m.sideBar.visible = true
             m.firstScreen.visible = false
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.descriptText.visible = false
             m.videoScene.visible = true
             m.home.setFocus(true)
+            m.sideBar.visible = true
+            m.firstScreen.visible = false
+            m.descriptText.visible = false
+            m.videoScene.visible = true
+            m.home.setFocus(true)
+            setVideo()
         else if key= "OK" and m.advengers2.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.videoScene.visible = true
             m.home.setFocus(true)  
+            m.sideBar.visible = true
+            m.firstScreen.visible = false
+            m.descriptText.visible = false
+            m.videoScene.visible = true
+            m.home.setFocus(true)
+            setVideo()
         else if key= "OK" and m.hulk2.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.videoScene.visible = true
             m.home.setFocus(true)  
-        else if key= "OK" and m.hulk.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.videoScene.visible = true
-            m.home.setFocus(true)        
+            m.home.setFocus(true)
+            setVideo()
+        else if key= "OK" and m.hulk.hasFocus()
+            m.sideBar.visible = true
+            m.list.visible=false
+            m.list2.visible=false
+            m.firstScreen.visible = false
+            m.descriptText.visible = false
+            m.videoScene.visible = true
+            m.home.setFocus(true) 
+           
+                m.sideBar.visible = true
+                m.firstScreen.visible = false
+                m.descriptText.visible = false
+                m.videoScene.visible = true
+                m.home.setFocus(true)
+                setVideo()
+           
         else if key= "OK" and m.home.hasFocus()
+           
             m.sideBar.visible = true
             m.list.visible=false
             m.list2.visible=false
             m.firstScreen.visible = true
             m.descriptText.visible = true
             m.videoScene.visible = false
+          
         else if key= "OK" and m.capitanAmeric.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.detalleScreen.visible = true
             m.home.setFocus(true)
         else if key= "OK" and m.capitanAmeric2.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.detalleScreen.visible = true
@@ -273,15 +301,15 @@ function onKeyEvent(key as string, press as boolean) as boolean
         else if key= "OK" and m.ironman.hasFocus()
             m.sideBar.visible = true
             m.firstScreen.visible = false
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.descriptText.visible = false
             m.detalleScreen.visible = true
             m.home.setFocus(true)    
         else if key= "OK" and m.ironman2.hasFocus()
             m.sideBar.visible = true
-            ' m.list.visible=false
-            ' m.list2.visible=false
+            m.list.visible=false
+            m.list2.visible=false
             m.firstScreen.visible = false
             m.descriptText.visible = false
             m.detalleScreen.visible = true
@@ -355,7 +383,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true)
+            m.advengers.setFocus(true)
         else if key= "back" and m.home.isInFocusChain()
             m.profile.opacity=0.6
             m.home.opacity=0.6
@@ -363,7 +391,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true)   
+            m.advengers.setFocus(true)   
         else if key= "back" and m.search.isInFocusChain()
             m.profile.opacity=0.6
             m.home.opacity=0.6
@@ -371,7 +399,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true)
+            m.advengers.setFocus(true)
         else if key= "back" and m.movie.isInFocusChain()
             m.profile.opacity=0.6
             m.home.opacity=0.6
@@ -379,7 +407,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true)   
+            m.advengers.setFocus(true)   
         else if key= "back" and m.favorite.isInFocusChain()
             m.profile.opacity=0.6
             m.home.opacity=0.6
@@ -387,7 +415,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true) 
+            m.advengers.setFocus(true) 
         else if key= "back" and m.settings.isInFocusChain()
             m.profile.opacity=0.6
             m.home.opacity=0.6
@@ -395,15 +423,15 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.movie.opacity=0.6
             m.favorite.opacity=0.6
             m.settings.opacity=0.6
-            m.contenido.setFocus(true)
-        else if key= "back" and m.contenido.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.contenido.setFocus(true)    
+            m.advengers.setFocus(true)
+        ' else if key= "back" and m.advengers.isInFocusChain()
+        '     m.profile.opacity=0.6
+        '     m.home.opacity=0.6
+        '     m.search.opacity=0.6
+        '     m.movie.opacity=0.6
+        '     m.favorite.opacity=0.6
+        '     m.settings.opacity=0.6
+        '     m.advengers.setFocus(true)    
         end if
     end if
 
