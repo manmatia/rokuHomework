@@ -62,7 +62,7 @@
         
         </layoutGroup>
     
-        <layoutGroup 
+        <layoutGroup   
           id="firstScreen" 
           layoutDirection="vert"
           visible="true"
@@ -85,7 +85,7 @@
             visible="true"
             layoutDirection="vert"
             color="0xFF0000" 
-            translation="[200,30]" 
+            translation="[200,200]" 
             Wrap="true" 
             font="font:LargeBoldSystemFont" 
             width="1400" 
