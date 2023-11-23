@@ -48,7 +48,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.detalle.setFocus(false)
             m.contenido.setFocus(true)
             handled = true
-        else if key= "back"
+        else if key= "back" and m.contenido.isInFocusChain()
             m.profile.opacity=1
             m.home.opacity=0.6
             m.search.opacity=0.6
@@ -126,7 +126,62 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.profile.opacity=1
             m.settings.setFocus(false)
             m.settings.opacity=0.6
-        
+        else if key= "back" and m.profile.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)
+        else if key= "back" and m.home.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)   
+        else if key= "back" and m.search.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)
+        else if key= "back" and m.movie.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)   
+        else if key= "back" and m.favorite.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true) 
+        else if key= "back" and m.settings.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)
+        else if key= "back" and m.contenido.isInFocusChain()
+            m.profile.opacity=0.6
+            m.home.opacity=0.6
+            m.search.opacity=0.6
+            m.movie.opacity=0.6
+            m.favorite.opacity=0.6
+            m.settings.opacity=0.6
+            m.contenido.setFocus(true)    
         end if
     end if
 
