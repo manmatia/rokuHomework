@@ -5,6 +5,63 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
+
+    <layoutGroup 
+          id="sideBar" 
+          layoutDirection="vert"
+          visible="true"
+          translation="[15, 15]" 
+          height="5" 
+          width="2"
+          color="0xFFFFFF" 
+          font="font:LargeBoldSystemFont"  >
+
+         <Poster 
+             uri="pkg:/images/iconMarvel.webp" 
+             width="160" 
+             height="100" 
+             translation="[0,0]"/>
+
+             <Rectangle
+              width="160" 
+             height="100" 
+             visible= "false"
+             />
+
+             <Poster 
+             uri="pkg:/images/3.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+
+               <Poster 
+             uri="pkg:/images/2.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+              <Poster 
+             uri="pkg:/images/1.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+              <Poster 
+             uri="pkg:/images/5.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+              <Poster 
+             uri="pkg:/images/4.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+              <Poster 
+             uri="pkg:/images/6.png" 
+             width="160" 
+             height="100" 
+             translation="[5,5]"/>
+        
+        </layoutGroup>
+    
         <layoutGroup 
           id="firstScreen" 
           layoutDirection="vert"
