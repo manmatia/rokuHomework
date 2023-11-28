@@ -2,23 +2,16 @@ sub init()
     m.sideBar = m.top.findNode("sideBar")
     m.firstScreen = m.top.findNode("firstScreen")
     m.descriptText = m.top.findNode("descriptText")
-
     m.videoScene = m.top.findNode("videoScene")
-
     m.detalleScreen = m.top.findNode("detalleScreen")
-  
-    ' m.home2 = m.top.findNode("home2")
     m.list=m.top.findNode("list")
     m.list2=m.top.findNode("list2")
-
-    ' m.home2.observefield("buttonselected", "showGoHome2")
     m.profile=m.top.findNode("profile")
     m.home=m.top.findNode("home")
     m.search=m.top.findNode("search")
     m.movie=m.top.findNode("movie")
     m.favorite=m.top.findNode("favorite")
     m.settings=m.top.findNode("settings")
-
     m.profile.opacity=0.2
     m.home.opacity=0.2
     m.search.opacity=0.2
@@ -34,9 +27,7 @@ sub init()
     m.capitanAmeric2=m.top.findNode("capitanAmeric2")
     m.hulk2=m.top.findNode("hulk2")
     m.ironman2=m.top.findNode("ironman2")
-
     m.advengers.setFocus(true)
-
     m.advengers.opacity=1
     m.capitanAmeric.opacity=0.6
     m.hulk.opacity=0.6
