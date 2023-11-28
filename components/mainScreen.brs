@@ -40,172 +40,24 @@ sub init()
 
 end sub
 
-
-
+sub focusPoster(posterOld , posterNew)
+    posterNew.setFocus(true)
+    posterNew.opacity=1
+    posterOld.opacity=0.6
+end sub
 function onKeyEvent(key as string, press as boolean) as boolean
     handled = false
 
     if press then
-        ' Verificar las teclas presionadas
-        if key = "right" and m.advengers.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers.setFocus(false)
-            m.advengers.opacity=0.6
-            m.capitanAmeric.setFocus(true)
-            m.capitanAmeric.opacity=1
+        if m.childOne.hasFocus(true)
+        if key = "right" 
+            focusPoster(m.childOne,m.childTwo)
             handled = true
-        else if key = "left" and m.advengers.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers.setFocus(false)
-            m.advengers.opacity=0.6
-            m.ironman2.setFocus(true)
-            m.ironman2.opacity=1
-            handled = true
-        else if key = "down" and m.advengers.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers.setFocus(false)
-            m.advengers.opacity=0.6
-            m.advengers2.setFocus(true)
-            m.advengers2.opacity=1
-            handled = true 
-        else if key = "up" and m.advengers2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers2.setFocus(false)
-            m.advengers2.opacity=0.6
-            m.advengers.setFocus(true)
-            m.advengers.opacity=1
-            handled = true  
+        else if key = "left"
+            focusPoster(m.childTwo,m.childOne)
+           handled = true
         
-        else if key = "right" and m.capitanAmeric.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric.setFocus(false)
-            m.capitanAmeric.opacity=0.6
-            m.hulk.setFocus(true)
-            m.hulk.opacity=1
-            handled = true   
-        else if key = "left" and m.capitanAmeric.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric.setFocus(false)
-            m.capitanAmeric.opacity=0.6
-            m.advengers.setFocus(true)
-            m.advengers.opacity=1
-            handled = true
-        else if key = "down" and m.capitanAmeric.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric.setFocus(false)
-            m.capitanAmeric.opacity=0.6
-            m.capitanAmeric2.setFocus(true)
-            m.capitanAmeric2.opacity=1
-            handled = true
-        else if key = "up" and m.capitanAmeric2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric2.setFocus(false)
-            m.capitanAmeric2.opacity=0.6
-            m.capitanAmeric.setFocus(true)
-            m.capitanAmeric.opacity=1
-            handled = true
-
-        else if key = "right" and m.hulk.isInFocusChain()
-            ' Cambiar el enfoque
-            m.hulk.setFocus(false)
-            m.hulk.opacity=0.6
-            m.ironman.setFocus(true)
-            m.ironman.opacity=1
-            handled = true
-        else if key = "down" and m.ironman.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman.setFocus(false)
-            m.ironman.opacity=0.6
-            m.ironman2.setFocus(true)
-            m.ironman2.opacity=1
-            handled = true
-        else if key = "up" and m.ironman2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman2.setFocus(false)
-            m.ironman2.opacity=0.6
-            m.ironman.setFocus(true)
-            m.ironman.opacity=1
-            handled = true
-        else if key = "right" and m.ironman.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman.setFocus(false)
-            m.ironman.opacity=0.6
-            m.advengers2.setFocus(true)
-            m.advengers2.opacity=1
-            handled = true
-        else if key = "left" and m.ironman.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman.setFocus(false)
-            m.ironman.opacity=0.6
-            m.hulk.setFocus(true)
-            m.hulk.opacity=1
-            handled = true
-        else if key = "left" and m.advengers2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers2.setFocus(false)
-            m.advengers2.opacity=0.6
-            m.ironman.setFocus(true)
-            m.ironman.opacity=1
-            handled = true
-        else if key = "right" and m.advengers2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.advengers2.setFocus(false)
-            m.advengers2.opacity=0.6
-            m.capitanAmeric2.setFocus(true)
-            m.capitanAmeric2.opacity=1
-            handled = true
-        else if key = "left" and m.capitanAmeric2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric2.setFocus(false)
-            m.capitanAmeric2.opacity=0.6
-            m.advengers2.setFocus(true)
-            m.advengers2.opacity=1
-            handled = true
-        else if key = "right" and m.capitanAmeric2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.capitanAmeric2.setFocus(false)
-            m.capitanAmeric2.opacity=0.6
-            m.hulk2.setFocus(true)
-            m.hulk2.opacity=1
-            handled = true
-        else if key = "right" and m.hulk2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.hulk2.setFocus(false)
-            m.hulk2.opacity=0.6
-            m.ironman2.setFocus(true)
-            m.ironman2.opacity=1
-            handled = true
-        else if key = "left" and m.hulk2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.hulk2.setFocus(false)
-            m.hulk2.opacity=0.6
-            m.capitanAmeric2.setFocus(true)
-            m.capitanAmeric2.opacity=1
-            handled = true
-        else if key = "left" and m.ironman2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman2.setFocus(false)
-            m.ironman2.opacity=0.6
-            m.hulk2.setFocus(true)
-            m.hulk2.opacity=1
-            handled = true
-        else if key = "rigth" and m.ironman2.isInFocusChain()
-            ' Cambiar el enfoque
-            m.ironman2.setFocus(false)
-            m.ironman2.opacity=0.6
-            m.advengers.setFocus(true)
-            m.advengers.opacity=1
-            handled = true
-
-    else if key= "back" and m.home.isInFocusChain()
-            m.profile.opacity=1
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            
-            m.profile.setFocus(true)
+        
         else if key= "OK" and m.advengers.hasFocus()
             m.sideBar.visible = true
             m.firstScreen.visible = false
@@ -425,7 +277,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
         '     m.advengers.setFocus(true)    
         end if
     end if
-
+end if
     return handled
 end function
 
