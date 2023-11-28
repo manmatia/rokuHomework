@@ -31,39 +31,39 @@
              <Poster
              id="profile" 
              uri="pkg:/images/3.png" 
-             width="160" 
-             height="100" 
+             width="100" 
+             height="60" 
              translation="[5,5]"/>
 
                <Poster 
              id="home"
              uri="pkg:/images/2.png" 
-             width="160" 
-             height="100" 
+             width="100" 
+             height="60" 
              translation="[5,5]"/>
               <Poster 
              id="search"
              uri="pkg:/images/1.png" 
-             width="160" 
-             height="100" 
+             width="100" 
+             height="60"  
              translation="[5,5]"/>
               <Poster 
               id="movie"
              uri="pkg:/images/5.png" 
-             width="160" 
-             height="100" 
+             width="100" 
+             height="60" 
              translation="[5,5]"/>
               <Poster 
               id="favorite"
              uri="pkg:/images/4.png" 
-             width="160" 
-             height="100" 
+             width="100" 
+             height="60" 
              translation="[5,5]"/>
               <Poster 
               id="settings"
              uri="pkg:/images/6.png" 
-             width="160" 
-             height="100" 
+              width="100" 
+             height="60" 
              translation="[5,5]"/>
         
         </layoutGroup>
@@ -138,59 +138,7 @@
              height="300" 
              translation="[5,5]"/>
     </layoutGroup >
-  
-     <layoutGroup 
-            id="descriptText3" 
-            visible="true"
-            layoutDirection="vert"
-            color="0xFF0000" 
-            translation="[200,750]" 
-            Wrap="true" 
-            font="font:LargeBoldSystemFont" 
-            width="1400" 
-            height="1250" >
-                <Label 
-                    id="texto3" 
-                    text="Series"
-                    />
-    </layoutGroup >
 
-    <layoutGroup 
-            id="list2" 
-            visible="true"
-            layoutDirection="horiz"
-            color="0xFF0000" 
-            translation="[200,800]" 
-            Wrap="true" 
-            font="font:LargeBoldSystemFont" 
-            width="1400" 
-            height="1250" >
-        
-        <Poster 
-             id="advengers2"
-             uri="pkg:/images/advengers.jpg" 
-             width="400" 
-             height="300" 
-             translation="[5,5]"/>
-        <Poster 
-             id="capitanAmeric2"
-             uri="pkg:/images/capitanAmeric.jpg" 
-             width="400" 
-             height="300" 
-             translation="[5,5]"/>
-        <Poster 
-             id="hulk2"
-             uri="pkg:/images/hulk.jpg" 
-             width="400" 
-             height="300" 
-             translation="[5,5]"/>
-        <Poster 
-             id="ironman2"
-             uri="pkg:/images/ironman.jpg" 
-             width="400" 
-             height="300" 
-             translation="[5,5]"/>
-    </layoutGroup >
   <layoutGroup
             id="videoScene"
             visible="false"
