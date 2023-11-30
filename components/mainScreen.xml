@@ -5,22 +5,85 @@
     <script type="text/brightscript" uri="mainScreen.brs" />
 
     <children>
-        <layoutGroup 
-          id="firstScreen" 
+
+    <layoutGroup 
+          id="sideBar" 
           layoutDirection="vert"
+          visible="true"
+          translation="[15, 15]" 
+          height="5" 
+          width="2"
+          color="0xFFFFFF" 
+          font="font:LargeBoldSystemFont"  >
+
+         <Poster 
+             uri="pkg:/images/iconMarvel.webp" 
+             width="160" 
+             height="100" 
+             translation="[0,0]"/>
+
+             <Rectangle
+              width="160" 
+             height="100" 
+             visible= "false"
+             />
+
+             <Poster
+             id="profile" 
+             uri="pkg:/images/3.png" 
+             width="100" 
+             height="60" 
+             translation="[5,5]"/>
+
+               <Poster 
+             id="home"
+             uri="pkg:/images/2.png" 
+             width="100" 
+             height="60" 
+             translation="[5,5]"/>
+              <Poster 
+             id="search"
+             uri="pkg:/images/1.png" 
+             width="100" 
+             height="60"  
+             translation="[5,5]"/>
+              <Poster 
+              id="movie"
+             uri="pkg:/images/5.png" 
+             width="100" 
+             height="60" 
+             translation="[5,5]"/>
+              <Poster 
+              id="favorite"
+             uri="pkg:/images/4.png" 
+             width="100" 
+             height="60" 
+             translation="[5,5]"/>
+              <Poster 
+              id="settings"
+             uri="pkg:/images/6.png" 
+              width="100" 
+             height="60" 
+             translation="[5,5]"/>
+        
+        </layoutGroup>
+    
+        <layoutGroup   
+          id="firstScreen" 
+          layoutDirection="horiz"
           visible="true"
           translation="[200,30]" 
           height="50" 
           width="200"
           color="0xFF0000" 
           font="font:LargeBoldSystemFont"  >
-        
-            <simpleLabel 
-                id="tittle" 
-                text="Canal de marvel" />
-            <simpleLabel 
-                id="welcomeText" 
-                text="Bienvenido al canal de marvel" />
+    
+        <Poster 
+              id="head"
+             uri="pkg:/images/head.png" 
+             width="1700" 
+             height="300" 
+             translation="[5,5]"/>
         </layoutGroup>
 
         <layoutGroup 
@@ -28,37 +91,60 @@
             visible="true"
             layoutDirection="vert"
             color="0xFF0000" 
-            translation="[200,30]" 
+            translation="[200,350]" 
             Wrap="true" 
             font="font:LargeBoldSystemFont" 
             width="1400" 
             height="1250" >
                 <Label 
                     id="texto2" 
-                    text="Este canal está dedicado a los personajes de marvel, si eres fanático te va a encantar nuestro canal" 
+                    text="Películas"
                     />
-                
-              <Rectangle 
-                    id="botonRectangle" 
-                    focusable="true" 
-                    translation="[80,200]" 
-                    width="1800" 
-                    height="700" 
-                    color="0xFFFDD0">
-                        <Poster 
-                            uri="pkg:/images/capitan.jpeg" 
-                            width="640" 
-                            height="440" 
-                            translation="[500,126]"/>
-                
-                </Rectangle>
     </layoutGroup >
-  
+
+    <layoutGroup 
+            id="list" 
+            visible="true"
+            layoutDirection="horiz"
+            color="0xFF0000" 
+            translation="[200,400]" 
+            Wrap="true" 
+            font="font:LargeBoldSystemFont" 
+            width="1400" 
+            height="1250" >
+        
+        <Poster 
+             id="advengers"
+             uri="pkg:/images/advengers.jpg" 
+             width="400" 
+             height="300" 
+             translation="[5,5]"/>
+        <Poster 
+             id="capitanAmeric"
+             uri="pkg:/images/capitanAmeric.jpg" 
+             width="400" 
+             height="300" 
+             translation="[5,5]"/>
+        <Poster 
+             id="hulk"
+             uri="pkg:/images/hulk.jpg" 
+             width="400" 
+             height="300" 
+             translation="[5,5]"/>
+        <Poster 
+             id="ironman"
+             uri="pkg:/images/ironman.jpg" 
+             width="400" 
+             height="300" 
+             translation="[5,5]"/>
+    </layoutGroup >
+
   <layoutGroup
             id="videoScene"
             visible="false"
             layoutDirection="vert"> 
             <Video 
+                id="videoPlayer"
                 translation="[0,150]" 
                 width="2000%" 
                 height="700%" 
@@ -80,12 +166,12 @@
                 translation="[200,30]" 
                 font="font:LargeBoldSystemFont"/>
 
-                 <Button 
+                 <!-- <Button 
             id="home" 
             text="volver a home" 
             showFocusFootprint="true" 
             minWidth="240" 
-            translation="[400,930]"  />
+            translation="[400,930]"  /> -->
        
         </layoutGroup>
 
@@ -97,25 +183,25 @@
             <Label 
                 id="info" 
                 text="información del video" 
-                height="100" 
-                width="400" 
+                height="400" 
+                width="800" 
                 horizAlign="center" 
                 vertAlign="center" 
                 color="0xFF0000" 
-                translation="[200,30]" />
+                translation="[400,130]" />
             <Label 
                 id="duracion" 
                 text="duración del video" 
                 color="0xFF0000" 
-                translation="[200,30]" 
+                translation="[600,330]" 
                 font="font:LargeBoldSystemFont"/>
 
-                 <Button 
+                 <!-- <Button 
             id="home2" 
             text="volver a home" 
             showFocusFootprint="true" 
             minWidth="240" 
-            translation="[400,930]"  />
+            translation="[400,930]"  /> -->
        
         </layoutGroup>
       
@@ -123,17 +209,6 @@
         
       
 
-        <Button 
-            id="contenido" 
-            text="Ir al contenido" 
-            showFocusFootprint="true" 
-            minWidth="240" 
-            translation="[400,930]"  />
-        <Button 
-            id="detalle" 
-            text="Ir al detalle" 
-            showFocusFootprint="true" 
-            minWidth="240" 
-            translation="[1200,930]"  />
+       
     </children>
 </component>
