@@ -23,263 +23,291 @@ sub init()
     m.capitanAmeric=m.top.findNode("capitanAmeric")
     m.hulk=m.top.findNode("hulk")
     m.ironman=m.top.findNode("ironman")
-    m.advengers2=m.top.findNode("advengers2")
-    m.capitanAmeric2=m.top.findNode("capitanAmeric2")
-    m.hulk2=m.top.findNode("hulk2")
-    m.ironman2=m.top.findNode("ironman2")
+   
     m.advengers.setFocus(true)
     m.advengers.opacity=1
     m.capitanAmeric.opacity=0.6
     m.hulk.opacity=0.6
     m.ironman.opacity=0.6
-    m.advengers2.opacity=0.6
-    m.capitanAmeric2.opacity=0.6
-    m.hulk2.opacity=0.6
-    m.ironman2.opacity=0.6
+  
+     m.idList= [m.advengers, m.capitanAmerica, m.hulk, m.ironman ]
+     m.currentIndex = 0
+     
+   
 
-
+    '  updatePosterFocus()
 end sub
 
-sub focusPoster(posterOld , posterNew)
-    posterNew.setFocus(true)
-    posterNew.opacity=1
-    posterOld.opacity=0.6
-end sub
 function onKeyEvent(key as string, press as boolean) as boolean
     handled = false
 
     if press then
-        if m.childOne.hasFocus(true)
-        if key = "right" 
-            focusPoster(m.childOne,m.childTwo)
+        if key = "right" or key = "left"
             handled = true
-        else if key = "left"
-            focusPoster(m.childTwo,m.childOne)
-           handled = true
-        
-        
-        else if key= "OK" and m.advengers.hasFocus()
-            m.sideBar.visible = true
-            m.firstScreen.visible = false
-            m.list.visible=false
-            m.list2.visible=false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)
-            m.sideBar.visible = true
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)
-            setVideo()
-        else if key= "OK" and m.advengers2.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)  
-            m.sideBar.visible = true
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)
-            setVideo()
-        else if key= "OK" and m.hulk2.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)  
-            m.sideBar.visible = true
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true)
-            setVideo()
-        else if key= "OK" and m.hulk.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.videoScene.visible = true
-            m.home.setFocus(true) 
-           
-                m.sideBar.visible = true
-                m.firstScreen.visible = false
-                m.descriptText.visible = false
-                m.videoScene.visible = true
-                m.home.setFocus(true)
-                setVideo()
-           
-        else if key= "OK" and m.home.hasFocus()
-           
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = true
-            m.descriptText.visible = true
-            m.videoScene.visible = false
-          
-        else if key= "OK" and m.capitanAmeric.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.detalleScreen.visible = true
-            m.home.setFocus(true)
-        else if key= "OK" and m.capitanAmeric2.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.detalleScreen.visible = true
-            m.home.setFocus(true)    
-        else if key= "OK" and m.ironman.hasFocus()
-            m.sideBar.visible = true
-            m.firstScreen.visible = false
-            m.list.visible=false
-            m.list2.visible=false
-            m.descriptText.visible = false
-            m.detalleScreen.visible = true
-            m.home.setFocus(true)    
-        else if key= "OK" and m.ironman2.hasFocus()
-            m.sideBar.visible = true
-            m.list.visible=false
-            m.list2.visible=false
-            m.firstScreen.visible = false
-            m.descriptText.visible = false
-            m.detalleScreen.visible = true
-            m.home.setFocus(true)
-        else if key= "up" and m.profile.isInFocusChain()
-            m.settings.setFocus(true)
-            m.settings.opacity=1
-            m.profile.setFocus(false)
-            m.profile.opacity=0.6
-        else if key= "down" and m.profile.isInFocusChain()
-            m.home.setFocus(true)
-            m.home.opacity=1
-            m.profile.setFocus(false)
-            m.profile.opacity=0.6
-        
-        else if key= "up" and m.home.isInFocusChain()
-            m.profile.setFocus(true)
-            m.profile.opacity=1
-            m.home.setFocus(false)
-            m.home.opacity=0.6    
-        
-        else if key= "down" and m.home.isInFocusChain()
-            m.search.setFocus(true)
-            m.search.opacity=1
-            m.home.setFocus(false)
-            m.home.opacity=0.6
-        else if key= "up" and m.search.isInFocusChain()
-            m.home.setFocus(true)
-            m.home.opacity=1
-            m.search.setFocus(false)
-            m.search.opacity=0.6
-        else if key= "down" and m.search.isInFocusChain()
-            m.movie.setFocus(true)
-            m.movie.opacity=1
-            m.search.setFocus(false)
-            m.search.opacity=0.6
-        else if key= "up" and m.movie.isInFocusChain()
-            m.search.setFocus(true)
-            m.search.opacity=1
-            m.movie.setFocus(false)
-            m.movie.opacity=0.6
-        else if key= "down" and m.movie.isInFocusChain()
-            m.favorite.setFocus(true)
-            m.favorite.opacity=1
-            m.movie.setFocus(false)
-            m.movie.opacity=0.6
-        else if key= "up" and m.favorite.isInFocusChain()
-            m.movie.setFocus(true)
-            m.movie.opacity=1
-            m.favorite.setFocus(false)
-            m.favorite.opacity=0.6
-        else if key= "down" and m.favorite.isInFocusChain()
-            m.settings.setFocus(true)
-            m.settings.opacity=1
-            m.favorite.setFocus(false)
-            m.favorite.opacity=0.6
-        else if key= "up" and m.settings.isInFocusChain()
-            m.favorite.setFocus(true)
-            m.favorite.opacity=1
-            m.settings.setFocus(false)
-            m.settings.opacity=0.6
-        else if key= "down" and m.settings.isInFocusChain()
-            m.profile.setFocus(true)
-            m.profile.opacity=1
-            m.settings.setFocus(false)
-            m.settings.opacity=0.6
-        else if key= "back" and m.profile.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true)
-        else if key= "back" and m.home.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true)   
-        else if key= "back" and m.search.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true)
-        else if key= "back" and m.movie.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true)   
-        else if key= "back" and m.favorite.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true) 
-        else if key= "back" and m.settings.isInFocusChain()
-            m.profile.opacity=0.6
-            m.home.opacity=0.6
-            m.search.opacity=0.6
-            m.movie.opacity=0.6
-            m.favorite.opacity=0.6
-            m.settings.opacity=0.6
-            m.advengers.setFocus(true)
-        ' else if key= "back" and m.advengers.isInFocusChain()
-        '     m.profile.opacity=0.6
-        '     m.home.opacity=0.6
-        '     m.search.opacity=0.6
-        '     m.movie.opacity=0.6
-        '     m.favorite.opacity=0.6
-        '     m.settings.opacity=0.6
-        '     m.advengers.setFocus(true)    
+            changeFocus(key)
         end if
     end if
-end if
+
     return handled
 end function
+
+sub changeFocus(key as string)
+    if key = "right"
+        m.currentIndex = (m.currentIndex + 1) mod m.idList.count()
+    else if key = "left"
+        m.currentIndex = (m.currentIndex - 1 + m.idList.count()) mod m.idList.count()
+    end if
+    updatePosterFocus()
+   
+end sub
+
+sub updatePosterFocus()
+    for each poster in m.idList
+        poster.opacity = 0.6
+    end for
+
+    m.idList[m.currentIndex].setFocus(true)
+    m.idList[m.currentIndex].opacity = 1
+end sub
+
+' function onKeyEvent(key as string, press as boolean) as boolean
+'     handled = false
+
+'     if press then
+       
+'         if key = "right" 
+'             m.currentIndex=m.currentIndex+1
+'             m.childTwo=m.idList[m.currentIndex]
+'             focusPoster(m.childOne,m.childTwo)
+'             m.childOne=
+'             handled = true
+'         else if key = "left"
+'             focusPoster(m.childTwo,m.childOne)
+'            handled = true
+        
+        
+'         else if key= "OK" and m.advengers.hasFocus()
+'             m.sideBar.visible = true
+'             m.firstScreen.visible = false
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)
+'             m.sideBar.visible = true
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)
+'             setVideo()
+'         else if key= "OK" and m.advengers2.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)  
+'             m.sideBar.visible = true
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)
+'             setVideo()
+'         else if key= "OK" and m.hulk2.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)  
+'             m.sideBar.visible = true
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true)
+'             setVideo()
+'         else if key= "OK" and m.hulk.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.videoScene.visible = true
+'             m.home.setFocus(true) 
+           
+'                 m.sideBar.visible = true
+'                 m.firstScreen.visible = false
+'                 m.descriptText.visible = false
+'                 m.videoScene.visible = true
+'                 m.home.setFocus(true)
+'                 setVideo()
+           
+'         else if key= "OK" and m.home.hasFocus()
+           
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = true
+'             m.descriptText.visible = true
+'             m.videoScene.visible = false
+          
+'         else if key= "OK" and m.capitanAmeric.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.detalleScreen.visible = true
+'             m.home.setFocus(true)
+'         else if key= "OK" and m.capitanAmeric2.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.detalleScreen.visible = true
+'             m.home.setFocus(true)    
+'         else if key= "OK" and m.ironman.hasFocus()
+'             m.sideBar.visible = true
+'             m.firstScreen.visible = false
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.descriptText.visible = false
+'             m.detalleScreen.visible = true
+'             m.home.setFocus(true)    
+'         else if key= "OK" and m.ironman2.hasFocus()
+'             m.sideBar.visible = true
+'             m.list.visible=false
+'             m.list2.visible=false
+'             m.firstScreen.visible = false
+'             m.descriptText.visible = false
+'             m.detalleScreen.visible = true
+'             m.home.setFocus(true)
+'         else if key= "up" and m.profile.isInFocusChain()
+'             m.settings.setFocus(true)
+'             m.settings.opacity=1
+'             m.profile.setFocus(false)
+'             m.profile.opacity=0.6
+'         else if key= "down" and m.profile.isInFocusChain()
+'             m.home.setFocus(true)
+'             m.home.opacity=1
+'             m.profile.setFocus(false)
+'             m.profile.opacity=0.6
+        
+'         else if key= "up" and m.home.isInFocusChain()
+'             m.profile.setFocus(true)
+'             m.profile.opacity=1
+'             m.home.setFocus(false)
+'             m.home.opacity=0.6    
+        
+'         else if key= "down" and m.home.isInFocusChain()
+'             m.search.setFocus(true)
+'             m.search.opacity=1
+'             m.home.setFocus(false)
+'             m.home.opacity=0.6
+'         else if key= "up" and m.search.isInFocusChain()
+'             m.home.setFocus(true)
+'             m.home.opacity=1
+'             m.search.setFocus(false)
+'             m.search.opacity=0.6
+'         else if key= "down" and m.search.isInFocusChain()
+'             m.movie.setFocus(true)
+'             m.movie.opacity=1
+'             m.search.setFocus(false)
+'             m.search.opacity=0.6
+'         else if key= "up" and m.movie.isInFocusChain()
+'             m.search.setFocus(true)
+'             m.search.opacity=1
+'             m.movie.setFocus(false)
+'             m.movie.opacity=0.6
+'         else if key= "down" and m.movie.isInFocusChain()
+'             m.favorite.setFocus(true)
+'             m.favorite.opacity=1
+'             m.movie.setFocus(false)
+'             m.movie.opacity=0.6
+'         else if key= "up" and m.favorite.isInFocusChain()
+'             m.movie.setFocus(true)
+'             m.movie.opacity=1
+'             m.favorite.setFocus(false)
+'             m.favorite.opacity=0.6
+'         else if key= "down" and m.favorite.isInFocusChain()
+'             m.settings.setFocus(true)
+'             m.settings.opacity=1
+'             m.favorite.setFocus(false)
+'             m.favorite.opacity=0.6
+'         else if key= "up" and m.settings.isInFocusChain()
+'             m.favorite.setFocus(true)
+'             m.favorite.opacity=1
+'             m.settings.setFocus(false)
+'             m.settings.opacity=0.6
+'         else if key= "down" and m.settings.isInFocusChain()
+'             m.profile.setFocus(true)
+'             m.profile.opacity=1
+'             m.settings.setFocus(false)
+'             m.settings.opacity=0.6
+'         else if key= "back" and m.profile.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true)
+'         else if key= "back" and m.home.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true)   
+'         else if key= "back" and m.search.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true)
+'         else if key= "back" and m.movie.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true)   
+'         else if key= "back" and m.favorite.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true) 
+'         else if key= "back" and m.settings.isInFocusChain()
+'             m.profile.opacity=0.6
+'             m.home.opacity=0.6
+'             m.search.opacity=0.6
+'             m.movie.opacity=0.6
+'             m.favorite.opacity=0.6
+'             m.settings.opacity=0.6
+'             m.advengers.setFocus(true)
+'         ' else if key= "back" and m.advengers.isInFocusChain()
+'         '     m.profile.opacity=0.6
+'         '     m.home.opacity=0.6
+'         '     m.search.opacity=0.6
+'         '     m.movie.opacity=0.6
+'         '     m.favorite.opacity=0.6
+'         '     m.settings.opacity=0.6
+'         '     m.advengers.setFocus(true)    
+'         end if
+'     end if
+' end if
+'     return handled
+' end function
 
 
 sub showSecondScreen(event as object)
