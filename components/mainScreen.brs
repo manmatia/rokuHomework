@@ -4,78 +4,103 @@ sub init()
     m.descriptText = m.top.findNode("descriptText")
     m.videoScene = m.top.findNode("videoScene")
     m.detalleScreen = m.top.findNode("detalleScreen")
-    m.list=m.top.findNode("list")
-    m.list2=m.top.findNode("list2")
-    m.profile=m.top.findNode("profile")
-    m.home=m.top.findNode("home")
-    m.search=m.top.findNode("search")
-    m.movie=m.top.findNode("movie")
-    m.favorite=m.top.findNode("favorite")
-    m.settings=m.top.findNode("settings")
-    m.profile.opacity=0.2
-    m.home.opacity=0.2
-    m.search.opacity=0.2
-    m.movie.opacity=0.2
-    m.favorite.opacity=0.2
-    m.settings.opacity=0.2
-' poster
-    m.advengers=m.top.findNode("advengers")
-    m.capitanAmeric=m.top.findNode("capitanAmeric")
-    m.hulk=m.top.findNode("hulk")
-    m.ironman=m.top.findNode("ironman")
-   
-    m.advengers.setFocus(true)
-    m.advengers.opacity=1
-    m.capitanAmeric.opacity=0.6
-    m.hulk.opacity=0.6
-    m.ironman.opacity=0.6
-  
-     m.idList= [m.advengers, m.capitanAmerica, m.hulk, m.ironman ]
-     m.currentIndex = 0
-     
-   
+    m.list = m.top.findNode("list")
+    m.list2 = m.top.findNode("list2")
+    m.profile = m.top.findNode("profile")
+    m.home = m.top.findNode("home")
+    m.search = m.top.findNode("search")
+    m.movie = m.top.findNode("movie")
+    m.favorite = m.top.findNode("favorite")
+    m.settings = m.top.findNode("settings")
+    m.profile.opacity = 0.2
+    m.home.opacity = 0.2
+    m.search.opacity = 0.2
+    m.movie.opacity = 0.2
+    m.favorite.opacity = 0.2
+    m.settings.opacity = 0.2
+    ' poster
+    m.advengers = m.top.findNode("advengers")
+    m.capitanAmeric = m.top.findNode("capitanAmeric")
+    m.hulk = m.top.findNode("hulk")
+    m.ironman = m.top.findNode("ironman")
 
-    '  updatePosterFocus()
+    m.advengers.setFocus(true)
+    m.advengers.opacity = 1
+    m.capitanAmeric.opacity = 0.6
+    m.hulk.opacity = 0.6
+    m.ironman.opacity = 0.6
+
+  
+
+end sub
+
+
+sub focusPoster(posterOld, posterNew)
+    posterNew.setFocus(true)
+    posterNew.opacity = 1
+    posterOld.opacity = 0.6
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
     handled = false
 
     if press then
-        if key = "right" or key = "left"
-            handled = true
-            changeFocus(key)
+        posterOld = invalid
+        posterNew = invalid
+
+        if m.advengers.hasFocus()
+            posterOld = m.advengers
+            posterNew = m.capitanAmeric
+        else if m.capitanAmeric.hasFocus()
+            posterOld = m.capitanAmeric
+            posterNew = m.hulk
+        else if m.hulk.hasFocus()
+            posterOld = m.hulk
+            posterNew = m.ironman
+        else if m.ironman.hasFocus()
+            posterOld = m.ironman
+            posterNew = m.advengers
+        end if
+
+        if posterOld <> invalid and posterNew <> invalid
+            if key = "right"
+                focusPoster(posterOld, posterNew)
+                handled = true
+            else if key = "left"
+                focusPoster(posterNew, posterOld)
+                handled = true
+            else if key = "OK"
+                handleOkAction(posterOld)
+                handled = true    
+            end if
         end if
     end if
 
     return handled
 end function
 
-sub changeFocus(key as string)
-    if key = "right"
-        m.currentIndex = (m.currentIndex + 1) mod m.idList.count()
-    else if key = "left"
-        m.currentIndex = (m.currentIndex - 1 + m.idList.count()) mod m.idList.count()
+sub handleOkAction(posterOld)
+    if posterOld = m.advengers
+      
+        m.sideBar.visible = true
+        m.firstScreen.visible = false
+        m.list.visible = false
+        m.descriptText.visible = false
+        m.videoScene.visible = true
+        m.home.setFocus(true)
+        setVideo()
+    else if posterOld = m.capitanAmeric
+       
     end if
-    updatePosterFocus()
-   
 end sub
 
-sub updatePosterFocus()
-    for each poster in m.idList
-        poster.opacity = 0.6
-    end for
-
-    m.idList[m.currentIndex].setFocus(true)
-    m.idList[m.currentIndex].opacity = 1
-end sub
 
 ' function onKeyEvent(key as string, press as boolean) as boolean
 '     handled = false
 
 '     if press then
-       
-'         if key = "right" 
+
+'         if key = "right"
 '             m.currentIndex=m.currentIndex+1
 '             m.childTwo=m.idList[m.currentIndex]
 '             focusPoster(m.childOne,m.childTwo)
@@ -84,8 +109,8 @@ end sub
 '         else if key = "left"
 '             focusPoster(m.childTwo,m.childOne)
 '            handled = true
-        
-        
+
+
 '         else if key= "OK" and m.advengers.hasFocus()
 '             m.sideBar.visible = true
 '             m.firstScreen.visible = false
@@ -107,7 +132,7 @@ end sub
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
 '             m.videoScene.visible = true
-'             m.home.setFocus(true)  
+'             m.home.setFocus(true)
 '             m.sideBar.visible = true
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
@@ -121,7 +146,7 @@ end sub
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
 '             m.videoScene.visible = true
-'             m.home.setFocus(true)  
+'             m.home.setFocus(true)
 '             m.sideBar.visible = true
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
@@ -135,24 +160,24 @@ end sub
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
 '             m.videoScene.visible = true
-'             m.home.setFocus(true) 
-           
+'             m.home.setFocus(true)
+
 '                 m.sideBar.visible = true
 '                 m.firstScreen.visible = false
 '                 m.descriptText.visible = false
 '                 m.videoScene.visible = true
 '                 m.home.setFocus(true)
 '                 setVideo()
-           
+
 '         else if key= "OK" and m.home.hasFocus()
-           
+
 '             m.sideBar.visible = true
 '             m.list.visible=false
 '             m.list2.visible=false
 '             m.firstScreen.visible = true
 '             m.descriptText.visible = true
 '             m.videoScene.visible = false
-          
+
 '         else if key= "OK" and m.capitanAmeric.hasFocus()
 '             m.sideBar.visible = true
 '             m.list.visible=false
@@ -168,7 +193,7 @@ end sub
 '             m.firstScreen.visible = false
 '             m.descriptText.visible = false
 '             m.detalleScreen.visible = true
-'             m.home.setFocus(true)    
+'             m.home.setFocus(true)
 '         else if key= "OK" and m.ironman.hasFocus()
 '             m.sideBar.visible = true
 '             m.firstScreen.visible = false
@@ -176,7 +201,7 @@ end sub
 '             m.list2.visible=false
 '             m.descriptText.visible = false
 '             m.detalleScreen.visible = true
-'             m.home.setFocus(true)    
+'             m.home.setFocus(true)
 '         else if key= "OK" and m.ironman2.hasFocus()
 '             m.sideBar.visible = true
 '             m.list.visible=false
@@ -195,13 +220,13 @@ end sub
 '             m.home.opacity=1
 '             m.profile.setFocus(false)
 '             m.profile.opacity=0.6
-        
+
 '         else if key= "up" and m.home.isInFocusChain()
 '             m.profile.setFocus(true)
 '             m.profile.opacity=1
 '             m.home.setFocus(false)
-'             m.home.opacity=0.6    
-        
+'             m.home.opacity=0.6
+
 '         else if key= "down" and m.home.isInFocusChain()
 '             m.search.setFocus(true)
 '             m.search.opacity=1
@@ -262,7 +287,7 @@ end sub
 '             m.movie.opacity=0.6
 '             m.favorite.opacity=0.6
 '             m.settings.opacity=0.6
-'             m.advengers.setFocus(true)   
+'             m.advengers.setFocus(true)
 '         else if key= "back" and m.search.isInFocusChain()
 '             m.profile.opacity=0.6
 '             m.home.opacity=0.6
@@ -278,7 +303,7 @@ end sub
 '             m.movie.opacity=0.6
 '             m.favorite.opacity=0.6
 '             m.settings.opacity=0.6
-'             m.advengers.setFocus(true)   
+'             m.advengers.setFocus(true)
 '         else if key= "back" and m.favorite.isInFocusChain()
 '             m.profile.opacity=0.6
 '             m.home.opacity=0.6
@@ -286,7 +311,7 @@ end sub
 '             m.movie.opacity=0.6
 '             m.favorite.opacity=0.6
 '             m.settings.opacity=0.6
-'             m.advengers.setFocus(true) 
+'             m.advengers.setFocus(true)
 '         else if key= "back" and m.settings.isInFocusChain()
 '             m.profile.opacity=0.6
 '             m.home.opacity=0.6
@@ -302,7 +327,7 @@ end sub
 '         '     m.movie.opacity=0.6
 '         '     m.favorite.opacity=0.6
 '         '     m.settings.opacity=0.6
-'         '     m.advengers.setFocus(true)    
+'         '     m.advengers.setFocus(true)
 '         end if
 '     end if
 ' end if
