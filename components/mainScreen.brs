@@ -61,6 +61,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             posterOld = m.ironman
             posterNew = m.advengers
         end if
+        ' h
 
         if posterOld <> invalid and posterNew <> invalid
             if key = "right"
